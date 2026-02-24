@@ -1,6 +1,7 @@
 import { Component, inject, signal , OnInit } from '@angular/core';
 import { MovieCard } from './movie-card/movie-card';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../environments/environment'
 @Component({
   selector: 'app-root',
   imports: [MovieCard],
@@ -11,7 +12,7 @@ export class App implements OnInit {
   protected readonly title = signal('movie-app');
 
   private http = inject(HttpClient);
-  private apiKey = 'ee266460f5057694442159c23d2595cb';
+  private apiKey = environment.apiKey;
 
   movies = signal<any[]>([]);
 
