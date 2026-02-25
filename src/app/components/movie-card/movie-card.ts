@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 export class MovieCard {
   @Input() title: string = ''
   @Input() imgUrl: string= ''
+  @Input() overview: string=''
   @Input() rating:number=0
 }

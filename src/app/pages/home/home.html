@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="relative w-full h-[85vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+                class="w-full h-full object-cover object-top" alt="Hero Background">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 max-w-2xl">
+            <span class="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-4 block">New Release</span>
+            <h1 class="text-64px md:text-6xl font-black text-white leading-tight mb-4">
+                AVATAR: <span class="text-gray-400">THE WAY OF WATER</span>
+            </h1>
+            <p class="text-soft-gray text-lg mb-8 line-clamp-3">
+                Set more than a decade after the events of the first film, learn the story of the Sully family (Jake,
+                Neytiri, and their kids), the trouble that follows them...
+            </p>
+            <div class="flex space-x-4">
+                <button
+                    class="bg-accent hover:bg-yellow-500 text-dark-bg font-bold py-3 px-8 rounded-lg transition-all flex items-center">
+                    <span class="mr-2">▶</span> Watch Trailer
+                </button>
+                <button
+                    class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold py-3 px-8 rounded-lg border border-white/20 transition-all">
+                    View Details
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="mt-12">
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-2xl font-bold border-l-4 border-accent pl-4">Popular Movies</h2>
+    <a href="#" class="text-accent text-sm hover:underline font-medium">View All</a>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+    <app-movie-card></app-movie-card>
+    <app-movie-card></app-movie-card>
+    <app-movie-card></app-movie-card>
+    <app-movie-card></app-movie-card>
+    <app-movie-card></app-movie-card>
+  </div>
+</section>
+</body>
+
+</html>

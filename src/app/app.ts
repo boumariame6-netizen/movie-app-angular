@@ -1,37 +1,17 @@
 import { Component, inject, signal , OnInit } from '@angular/core';
-import { MovieCard } from './movie-card/movie-card';
-import { HttpClient } from '@angular/common/http';
-import {environment} from '../environments/environment'
+import { MovieCard } from './components/movie-card/movie-card';
+import { Footer } from "./components/footer/footer";
+import {Navbar} from "./components/navbar/navbar";
+import {Home} from "./pages/home/home"
 @Component({
   selector: 'app-root',
-  imports: [MovieCard],
+  imports: [MovieCard, Footer,Navbar ,Home],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App  {
   protected readonly title = signal('movie-app');
-
-  private http = inject(HttpClient);
-  private apiKey = environment.apiKey;
-
-  movies = signal<any[]>([]);
-
-  ngOnInit(){
-    this.fetchMovies();
+  
   }
-  fetchMovies() {
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}`;
-    
-    this.http.get<any>(url).subscribe((data) => {
-      const formattedMovies = data.results.map((m: any) => ({
-        id: m.id,
-        title: m.title,
-        rating: m.vote_average,
-        img: 'https://image.tmdb.org/t/p/w500' + m.poster_path 
-      }));
-      
-      this.movies.set(formattedMovies); 
-    });
-  }
-}
+
 
